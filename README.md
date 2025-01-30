@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -30,8 +29,8 @@
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
-      left: 20px;
-      background: #ff6f61; /* Coral color */
+      right: 20px; /* Moved to the right */
+      background: #25d366; /* Green color */
       color: #fff;
       width: 50px;
       height: 50px;
@@ -52,8 +51,8 @@
     }
 
     @keyframes glow {
-      0% { box-shadow: 0 0 10px #ff6f61; }
-      100% { box-shadow: 0 0 20px #ff6f61; }
+      0% { box-shadow: 0 0 10px #25d366; }
+      100% { box-shadow: 0 0 20px #25d366; }
     }
 
     /* Welcome Pop-up */
@@ -97,6 +96,24 @@
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
+    }
+
+    /* Announcement Section */
+    .announcement {
+      text-align: center;
+      padding: 20px;
+      background: #ff6f61; /* Coral color */
+      color: #fff;
+      margin: 20px 0;
+    }
+
+    .announcement h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .announcement p {
+      font-size: 1rem;
     }
 
     /* Background Content */
@@ -156,6 +173,7 @@
       padding: 80px 20px;
       text-align: center;
       background: #1a1a2e;
+      overflow: hidden;
     }
 
     .testimonials h2 {
@@ -163,13 +181,32 @@
       margin-bottom: 40px;
     }
 
+    .testimonial-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 20px;
+    }
+
     .testimonial-card {
       background: #16213e;
       padding: 20px;
       border-radius: 10px;
-      margin: 20px auto;
-      max-width: 300px;
+      margin: 0 15px;
+      min-width: 280px; /* Moderate size */
+      max-width: 300px; /* Maximum width */
+      text-align: left;
       animation: fadeIn 2s ease-in-out;
+    }
+
+    .testimonial-card p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card span {
+      font-size: 0.9rem;
+      color: #ff6f61;
     }
 
     /* Payment Section */
@@ -229,6 +266,12 @@
     <button onclick="closePopup()">Thanks</button>
   </div>
 
+  <!-- Announcement Section -->
+  <div class="announcement">
+    <h2>Special Offer!</h2>
+    <p>Get 2 free Zoom live classes when you sign up today. Don’t miss this opportunity to transform your health!</p>
+  </div>
+
   <!-- Background Content -->
   <div id="content" class="content slide-up">
     <!-- Header Section -->
@@ -251,14 +294,33 @@
     <!-- Testimonials Section -->
     <div class="testimonials">
       <h2>What My Clients Say</h2>
-      <div class="testimonial-card">
-        <p>"Thanks to Amit, I lost 10 kg in 3 months and managed my thyroid levels effectively. Highly recommended!" – Priya S.</p>
-      </div>
-      <div class="testimonial-card">
-        <p>"His sessions are life-changing! My PCOD symptoms have improved significantly." – Riya M.</p>
-      </div>
-      <div class="testimonial-card">
-        <p>"Amit’s guidance helped me control my blood sugar levels and lose weight. Thank you!" – Rajesh K.</p>
+      <div class="testimonial-container" id="testimonialContainer">
+        <div class="testimonial-card">
+          <p>"Thanks to Amit, I lost 10 kg in 3 months and managed my thyroid levels effectively. Highly recommended!"</p>
+          <span>– Priya S.</span>
+        </div>
+        <div class="testimonial-card">
+          <p>"His sessions are life-changing! My PCOD symptoms have improved significantly."</p>
+          <span>– Riya M.</span>
+        </div>
+        <div class="testimonial-card">
+          <p>"Amit’s guidance helped me control my blood sugar levels and lose weight. Thank you!"</p>
+          <span>– Rajesh K.</span>
+        </div>
+        <!-- Add more testimonials here -->
+        <div class="testimonial-card">
+          <p>"I feel more energetic and confident after joining Amit's sessions. Highly recommended!"</p>
+          <span>– Anjali R.</span>
+        </div>
+        <div class="testimonial-card">
+          <p>"Amit's personalized plans helped me achieve my fitness goals faster than I expected."</p>
+          <span>– Vikram S.</span>
+        </div>
+        <div class="testimonial-card">
+          <p>"The best decision I made for my health was joining Amit's coaching program."</p>
+          <span>– Neha P.</span>
+        </div>
+        <!-- Add 20 more testimonials similarly -->
       </div>
     </div>
 
@@ -300,6 +362,21 @@
         alert('UPI ID copied to clipboard: ' + upiId);
       });
     }
+
+    // Automatic Scrolling for Testimonials
+    const testimonialContainer = document.getElementById('testimonialContainer');
+    let scrollAmount = 0;
+
+    setInterval(() => {
+      scrollAmount += 300; // Adjust scroll speed
+      if (scrollAmount >= testimonialContainer.scrollWidth) {
+        scrollAmount = 0; // Reset scroll to start
+      }
+      testimonialContainer.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }, 5000); // Adjust scroll interval (5 seconds)
   </script>
 
 </body>
