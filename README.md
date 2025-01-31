@@ -290,7 +290,90 @@
       <div class="icon">📈</div>
       <p>Proven results with regular sessions and disciplined routines.</p>
     </div>
+<!-- Add this new section below the Benefits section -->
+<div class="results">
+  <h2>Client Transformations</h2>
+  <div class="results-container">
+    <!-- Before & After Photos -->
+    <div class="result-slide">
+      <img src="https://raw.githubusercontent.com/Technile/Fitness/main/IMG-20250130-WA0024.jpg" alt="Transformation 1">
+    </div>
+    <div class="result-slide">
+      <img src="https://raw.githubusercontent.com/Technile/Fitness/main/IMG-20250130-WA0025.jpg" alt="Transformation 2">
+    </div>
+    <div class="result-slide">
+      <img src="https://raw.githubusercontent.com/Technile/Fitness/main/IMG-20250130-WA0026.jpg" alt="Transformation 3">
+    </div>
+    <div class="result-slide">
+      <img src="https://raw.githubusercontent.com/Technile/Fitness/main/IMG-20250130-WA0027.jpg" alt="Transformation 4">
+    </div>
+    <div class="result-slide">
+      <img src="https://raw.githubusercontent.com/Technile/Fitness/main/IMG-20250130-WA0010.jpg" alt="Transformation 5">
+    </div>
+    <div class="result-slide">
+      <img src="https://raw.githubusercontent.com/Technile/Fitness/main/IMG-20250130-WA0009.jpg" alt="Transformation 6">
+    </div>
+    <div class="result-slide">
+      <img src="https://raw.githubusercontent.com/Technile/Fitness/main/IMG-20250130-WA0008.jpg" alt="Transformation 7">
+    </div>
+    <div class="result-slide">
+      <img src="https://raw.githubusercontent.com/Technile/Fitness/main/IMG-20250130-WA0004.jpg" alt="Transformation 8">
+    </div>
+    <div class="result-slide">
+      <img src="https://raw.githubusercontent.com/Technile/Fitness/main/IMG-20250130-WA0007.jpg" alt="Transformation 9">
+    </div>
+  </div>
+</div>
 
+<!-- Add this CSS to your style section -->
+<style>
+  .results {
+    padding: 80px 20px;
+    text-align: center;
+    background: #1a1a2e;
+  }
+
+  .results h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .results-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .result-slide {
+    min-width: 80vw;
+    height: 60vh;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .result-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .result-slide:hover img {
+    transform: scale(1.05);
+  }
+
+  /* For desktop screens */
+  @media (min-width: 768px) {
+    .result-slide {
+      min-width: 600px;
+      height: 70vh;
+    }
+  }
+</style>
     <!-- Testimonials Section -->
     <div class="testimonials">
       <h2>What My Clients Say</h2>
